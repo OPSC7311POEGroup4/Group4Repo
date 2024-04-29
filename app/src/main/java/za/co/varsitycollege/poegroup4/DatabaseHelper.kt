@@ -14,6 +14,8 @@ SQLiteOpenHelper(context, DATABASE_NAME,null, DATABASE_VERSION) {
         private const val COLUMN_USERNAME = "username"
         private const val COLUMN_PASSWORD = "password"
     }
+    //https://www.geeksforgeeks.org/how-to-create-and-add-data-to-sqlite-database-in-android/
+//chaitanyamunje
 
     override fun onCreate(db: SQLiteDatabase?) {
         val createTableQuery = ("CREATE TABLE $TABLE_NAME (" +
@@ -46,4 +48,5 @@ val userExists = cursor.count > 0
         cursor.close()
         return userExists
     }
-}
+}//https://www.geeksforgeeks.org/how-to-create-and-add-data-to-sqlite-database-in-android/
+//chaitanyamunje

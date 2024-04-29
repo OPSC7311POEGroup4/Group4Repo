@@ -24,4 +24,6 @@ class MainActivity : AppCompatActivity() {
             startActivity((intent))
         }
     }
+    //https://www.geeksforgeeks.org/handling-click-events-button-android/
+    //Vijayaraghavan
 }

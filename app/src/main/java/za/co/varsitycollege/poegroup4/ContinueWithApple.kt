@@ -17,7 +17,8 @@ class ContinueWithApple : AppCompatActivity() {
         setContentView(R.layout.activity_continue_with_apple)
         binding = ActivityContinueWithAppleBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        //https://medium.com/@zehradurmus/a-beginners-guide-to-viewbinding-in-android-studio-1ba9353e2652
+        //Zehra Durmus
         databaseHelper = DatabaseHelper(this)
 
         binding.btnAppleContinue.setOnClickListener {
@@ -44,5 +45,7 @@ class ContinueWithApple : AppCompatActivity() {
         }else{
             Toast.makeText(this,"Sign Up failed", Toast.LENGTH_SHORT).show()
         }
+        //https://engineering.backmarket.com/from-kotlin-synthetics-to-android-viewbinding-the-definitive-guide-c98c6e89fe0b
+   //Florian Le Ficher
     }
 }

@@ -14,20 +14,24 @@ class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityLoginBinding.inflate(layoutInflater)
-        //setContentView(R.layout.activity_login)
+
         setContentView(binding.root)
+        //https://medium.com/@zehradurmus/a-beginners-guide-to-viewbinding-in-android-studio-1ba9353e2652
+        //Zehra Durmus
+
         databaseHelper= DatabaseHelper(this)
 
         binding.logbutton.setOnClickListener {
             val loginEmail=binding.editTextEmail.text.toString()
             val loginPassword=binding.editTextPassword.text.toString()
             loginDatabase(loginEmail,loginPassword)
+
         }
-        binding.logbutton.setOnClickListener{
-            val intent=Intent(this,homepage::class.java)
-            startActivity(intent)
-            finish()
-        }
+       binding.logbutton.setOnClickListener{
+           val intent=Intent(this,homepage::class.java)
+        startActivity(intent)
+          finish()
+       }
          binding.btnreturnlog.setOnClickListener{
              val intent= Intent(this,MainActivity::class.java)
              startActivity(intent)
@@ -50,7 +54,8 @@ class Login : AppCompatActivity() {
             startActivity(intent)
             finish()
         }else {
-        Toast.makeText(this,"Login faailed",Toast.LENGTH_SHORT).show()
-        }
+        Toast.makeText(this,"Login failed",Toast.LENGTH_SHORT).show()
+        }   //https://engineering.backmarket.com/from-kotlin-synthetics-to-android-viewbinding-the-definitive-guide-c98c6e89fe0b
+        //Florian Le Ficher
     }
 }
