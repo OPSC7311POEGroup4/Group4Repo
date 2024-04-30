@@ -20,7 +20,7 @@ SQLiteOpenHelper(context, DATABASE_NAME,null, DATABASE_VERSION) {
     override fun onCreate(db: SQLiteDatabase?) {
         val createTableQuery = ("CREATE TABLE $TABLE_NAME (" +
                 "$COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "$COLUMN_EMAIL TEXT PRIMARY KEY, " +
+                "$COLUMN_EMAIL TEXT, " +
                 "$COLUMN_PASSWORD TEXT)")
         db?.execSQL(createTableQuery)
     }
