@@ -24,21 +24,17 @@ class ContinueWithApple : AppCompatActivity() {
         binding.btnAppleContinue.setOnClickListener {
             val signupEmail = binding.editTextAppleEmail.text.toString()
             val signupPassword = binding.editTextApplePassword.text.toString()
-            signupDatabase(signupEmail, signupPassword)
+            AppleDatabase(signupEmail, signupPassword)
         }
-       binding.btnAppleContinue.setOnClickListener{
-        val intent=Intent(this,Login::class.java)
-            startActivity(intent)
-            finish()
-        }
+
 
 
     }
 
-    private fun signupDatabase(email:String,password:String){
+    private fun AppleDatabase(email:String,password:String){
         val insertRowId = databaseHelper.insertUser(email,password)
         if (insertRowId != -1L){
-            Toast.makeText(this, "Sign up successful", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Sign up successful with Apple", Toast.LENGTH_SHORT).show()
             val intent= Intent(this,Login::class.java)
             startActivity(intent)
             finish()

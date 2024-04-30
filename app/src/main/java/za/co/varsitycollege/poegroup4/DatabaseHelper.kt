@@ -10,8 +10,8 @@ SQLiteOpenHelper(context, DATABASE_NAME,null, DATABASE_VERSION) {
         private const val DATABASE_NAME = "UserDatabase.db"
         private const val DATABASE_VERSION = 1
         private const val TABLE_NAME = "userinfo"
+        private const val COLUMN_ID = "id"
         private const val COLUMN_EMAIL = "email"
-        private const val COLUMN_USERNAME = "username"
         private const val COLUMN_PASSWORD = "password"
     }
     //https://www.geeksforgeeks.org/how-to-create-and-add-data-to-sqlite-database-in-android/
@@ -19,8 +19,8 @@ SQLiteOpenHelper(context, DATABASE_NAME,null, DATABASE_VERSION) {
 
     override fun onCreate(db: SQLiteDatabase?) {
         val createTableQuery = ("CREATE TABLE $TABLE_NAME (" +
-                "$COLUMN_USERNAME TEXT, +" +
-                "$COLUMN_EMAIL TEXT PRIMARY KEY AUTOINCREMENT, " +
+                "$COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "$COLUMN_EMAIL TEXT PRIMARY KEY, " +
                 "$COLUMN_PASSWORD TEXT)")
         db?.execSQL(createTableQuery)
     }

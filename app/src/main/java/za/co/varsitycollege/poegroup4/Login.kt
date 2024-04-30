@@ -2,11 +2,11 @@ package za.co.varsitycollege.poegroup4
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+
 import android.content.Intent
 import android.widget.Toast
 import za.co.varsitycollege.poegroup4.databinding.ActivityLoginBinding
-import za.co.varsitycollege.poegroup4.databinding.ActivitySignUpBinding
+
 
 class Login : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -24,14 +24,10 @@ class Login : AppCompatActivity() {
         binding.logbutton.setOnClickListener {
             val loginEmail=binding.editTextEmail.text.toString()
             val loginPassword=binding.editTextPassword.text.toString()
-            loginDatabase(loginEmail,loginPassword)
+            loginDatabase(loginEmail, loginPassword)
 
         }
-       binding.logbutton.setOnClickListener{
-           val intent=Intent(this,homepage::class.java)
-        startActivity(intent)
-          finish()
-       }
+
          binding.btnreturnlog.setOnClickListener{
              val intent= Intent(this,MainActivity::class.java)
              startActivity(intent)
@@ -46,8 +42,8 @@ class Login : AppCompatActivity() {
          }
 
     }
-    private fun loginDatabase(email:String,password:String){
-        val userExists=databaseHelper.readUser(email,password)
+    private fun loginDatabase(email: String,password: String){
+        val userExists = databaseHelper.readUser(email, password)
         if(userExists){
             Toast.makeText(this,"Login is Successful",Toast.LENGTH_SHORT).show()
             val intent= Intent(this,homepage::class.java)

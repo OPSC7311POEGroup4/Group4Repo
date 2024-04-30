@@ -26,21 +26,17 @@ class ContinueWithGoogle : AppCompatActivity() {
         binding.GoogleContinuebtn.setOnClickListener {
             val signupEmail = binding.editTextGoogleEmail.text.toString()
             val signupPassword = binding.editTextGooglePassword.text.toString()
-            signupDatabase(signupEmail, signupPassword)
+            GoogleDatabase(signupEmail, signupPassword)
         }
-       binding.GoogleContinuebtn.setOnClickListener{
-          val intent= Intent(this,Login::class.java)
-         startActivity(intent)
-         finish()
-       }
+
 
 
     }
 
-    private fun signupDatabase(email:String,password:String) {
+    private fun GoogleDatabase(email:String,password:String) {
         val insertRowId = databaseHelper.insertUser(email, password)
         if (insertRowId != -1L) {
-            Toast.makeText(this, "Sign up successful", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Sign up successful with google", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, Login::class.java)
             startActivity(intent)
             finish()

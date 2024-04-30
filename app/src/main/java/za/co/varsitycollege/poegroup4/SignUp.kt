@@ -28,11 +28,8 @@ class SignUp : AppCompatActivity() {
             signupDatabase(signupEmail, signupPassword)
 
         }
-        binding.btnsignup.setOnClickListener{
-            val intent=Intent(this,MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
+
+
         binding.btnreturnsign.setOnClickListener {
             val intent=Intent(this,MainActivity::class.java)
            startActivity(intent)
@@ -54,8 +51,8 @@ class SignUp : AppCompatActivity() {
           }
     }
 
-    private fun signupDatabase(email:String,password:String){
-        val insertRowId = databaseHelper.insertUser(email,password)
+    private fun signupDatabase(email: String,password: String){
+        val insertRowId = databaseHelper.insertUser(email, password)
         if (insertRowId != -1L){
             Toast.makeText(this, "Sign up successful", Toast.LENGTH_SHORT).show()
             val intent=Intent(this,Login::class.java)
